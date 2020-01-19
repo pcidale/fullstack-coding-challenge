@@ -96,7 +96,7 @@ The test covers the following cases:
 - Method not allowed to the end point *'/en-es/translations'*;
 - Correct POST to *'/en-es/translations'*;
 - Bad request to *'/en-es/translations'*;
-- Correct PATCH to *'/en-es/translations/<uid>/'*;
+- Correct PATCH to *'/en-es/translations/\<uid\>/'*;
 - PATCH with a wrong translation UID;
 - Correct DELETE to *'/en-es/translations'*.
 
