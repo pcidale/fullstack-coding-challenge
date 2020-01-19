@@ -1,0 +1,55 @@
+body {
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+textarea {
+    resize: none !important;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px;
+}
+
+.main-nav {
+    background-color: #3248D6;
+    padding: 45px 90px;
+}
+
+#translation-label {
+    margin: 45px 0 5px 0;
+    padding-left: 5px;
+}
+
+#input-text {
+    width: 100%;
+}
+
+#chr-counter {
+    float: right;
+    font-weight: 300;
+    font-size: 80%;
+    margin: 5px 5px 0 0;
+}
+
+#submit-btn {
+    margin: 25px 0 50px 0;
+    width: 100%;
+    color: #fff;
+    border-radius: 30px;
+    border-color: #fff;
+    background-color: #3248D6;
+}
+
+#submit-btn:hover {
+    color: #3248D6;
+    background-color: #fff;
+    border-color: #3248D6;
+}
+
+.disabled {
+    cursor: default !important;
+}
+
+tbody {
+    font-weight: 300;
+}

@@ -1,0 +1,54 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Unbabel{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-1 col-1"></div>
+        <div class="col-lg-6 col-md-8 col-sm-10 col-10">
+            <h6 id="translation-label">English to Spanish</h6>
+            <textarea id="source-text" class="form-control" name="source-text" maxlength="50"></textarea>
+            <span id="chr-counter">Characters: 50</span>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-1 col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 col-md-4 col-sm-3 col-2"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+            <button id="submit-btn" class="btn btn-outline-primary">Translate</button>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-3 col-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="translation-tb" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>UID</th>
+                        <th>Status</th>
+                        <th>English</th>
+                        <th>Spanish</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for translation in translations %}
+                    <tr data-status="{{ translation.status.status }}">
+                        <td>{{ translation.uid }}</td>
+                        {% if translation.status_id == 1 %}
+                            <td><button type="button" class="btn btn-light btn-sm disabled">{{ translation.status.status }}</button></td>
+                        {% elif translation.status_id == 2 %}
+                            <td><button type="button" class="btn btn-warning btn-sm disabled">{{ translation.status.status }}</button></td>
+                        {% elif translation.status_id == 3 %}
+                            <td><button type="button" class="btn btn-success btn-sm disabled">{{ translation.status.status }}</button></td>
+                        {% endif %}
+                        <td>{{ translation.input_text }}</td>
+                        <td>{{ translation.output_text }}</td>
+                        <td><button type="button" class="btn btn-outline-danger btn-sm delete-translation" title="Delete Translation" data-uid="{{ translation.uid }}">delete</button></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

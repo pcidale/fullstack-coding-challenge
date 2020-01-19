@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    build: ./web
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    entrypoint: ./entrypoint.sh
+
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/www/static
+      - web-data:/usr/src/app/static
+    links:
+      - web:web
+
+  data:
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    command: "true"
+    environment:
+      - POSTGRES_USER=unbabel_usr
+      - POSTGRES_PASSWORD=5432
+      - POSTGRES_DB=unbabel-challenge
+
+  postgres:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=unbabel_usr
+      - POSTGRES_PASSWORD=5432
+      - POSTGRES_DB=unbabel-challenge
+
+volumes:
+  db-data:
+  web-data:

@@ -1,0 +1,39 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>Unbabel - English to Spanish</title>
+
+<!-- meta -->
+<meta name="description" content="Translation Web Service">
+<meta name="author" content="Piero Cidale">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- /meta -->
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+<!-- styles -->
+<link type="text/css" rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- /styles -->
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
+<!-- fonts -->
+
+</head>
+<body>
+  <div class="wrap">
+    <div class="main-nav nav-bar">
+      <img src="../../static/img/unbabel-logo.svg" alt="unbabel-logo">
+    </div>
+    <main id="content" role="main" class="container">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/script.js"></script>
+</body>
+</html>
