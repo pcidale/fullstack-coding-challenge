@@ -41,7 +41,7 @@ You can find more info about the api at [https://developers.unbabel.com](https:/
 ---
 # My Solution
 
-For my solution it's required to Python>=3.7, PostgresSQL>=12.1 and Docker>=2.1.0 .
+For my solution it's required to have installed Python>=3.7, PostgresSQL>=12.1 and Docker>=2.1.0 .
 
 I proposed 3 different scenarios to run the web app, they differ in terms of complexity and scalability.
 
